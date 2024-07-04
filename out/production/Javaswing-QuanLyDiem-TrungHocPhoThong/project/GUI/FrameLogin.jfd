@@ -1,0 +1,157 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {comp pnLeft:::::x, space :0:0:p, comp pnRight:::::x}}"
+			"$verticalGroup": "par l {comp pnLeft:::::x, comp pnRight::l:::x}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space ::50:x, par l {comp pnIntroduction:::p::p, comp lblCredit:::p:200:p}, space ::50:x}}"
+				"$verticalGroup": "par l {seq t {space ::130:x, comp pnIntroduction:::p:213:p, space ::104:x, comp lblCredit:::p::p, space :::p}}"
+			} ) {
+				name: "pnLeft"
+				"background": sfield java.awt.Color white
+				"maximumSize": new java.awt.Dimension( 400, 65769 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {comp lblLogo:::p::p, comp lblType::l:p:200:p, comp lblLevel::l:p:200:p}"
+					"$verticalGroup": "par l {seq l {comp lblLogo:::p::p, space :::p, comp lblType:::p::p, space :::p, comp lblLevel:::p::p, space :::x}}"
+				} ) {
+					name: "pnIntroduction"
+					"background": sfield java.awt.Color white
+					"preferredSize": new java.awt.Dimension( 200, 269 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblLogo"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/logo.png" )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblType"
+						"text": "QUẢN LÝ ĐIỂM"
+						"font": new java.awt.Font( "Segoe UI", 1, 26 )
+						"horizontalAlignment": 0
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblLevel"
+						"text": "TRUNG HỌC PHỔ THÔNG"
+						"font": new java.awt.Font( "Segoe UI", 1, 16 )
+						"horizontalAlignment": 0
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblCredit"
+					"text": "Make by GuenBanKhai"
+					"font": new java.awt.Font( "Segoe UI", 0, 12 )
+					"horizontalAlignment": 0
+					"foreground": sfield java.awt.Color lightGray
+					"background": new java.awt.Color( 0, 0, 0, 255 )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space ::50:x, comp pnForm:::::x, space ::50:x}}"
+				"$verticalGroup": "par l {seq t {space ::95:x, comp pnForm:::p:279:p, space ::95:x}}"
+			} ) {
+				name: "pnRight"
+				"background": new java.awt.Color( 255, 153, 102, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {comp lblUsername::l::0:x, comp lblTitle::::0:x, seq t {comp txtUsername::::0:x, space :::p, comp logoUsername:::p::p}, comp pnLine1::l:::x, comp lblPassword::l::0:x, comp pnLine2::t:::x, seq t {comp txtPassword::::262:x, space :::p, comp logoPassword:::p::p}, seq {space :::p, par l {comp cbxRemember::::0:x, seq t {space :0:83:x, comp btnLogin:::p:120:p, space :0:83:x}}, space :::p}}"
+					"$verticalGroup": "par l {seq l {comp lblTitle:::p::p, space :::p, comp lblUsername:::p::p, space :::p, par l:::p {comp logoUsername:::::x, comp txtUsername:::::x}, space :p:5:p, comp pnLine1:::p::p, space u:::p, comp lblPassword:::p::p, space :::p, par l:::p {comp logoPassword:::::x, comp txtPassword:::::x}, space :p:5:p, comp pnLine2:::p::p, space u:::p, comp cbxRemember:::p::p, space s:::p, comp btnLogin:::p::p}}"
+				} ) {
+					name: "pnForm"
+					"maximumSize": new java.awt.Dimension( 400, 32767 )
+					"background": new java.awt.Color( 255, 153, 102, 255 )
+					"preferredSize": new java.awt.Dimension( 298, 300 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblTitle"
+						"text": "ĐĂNG NHẬP"
+						"font": new java.awt.Font( "Segoe UI", 1, 36 )
+						"horizontalAlignment": 0
+						"foreground": sfield java.awt.Color white
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblUsername"
+						"text": "Tên đăng nhập:"
+						"font": new java.awt.Font( "Segoe UI", 1, 16 )
+						"foreground": sfield java.awt.Color white
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "logoUsername"
+						"preferredSize": &Dimension0 new java.awt.Dimension( 30, 30 )
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"opaque": true
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/icon-user.png" )
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "txtUsername"
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"font": new java.awt.Font( "Segoe UI", 0, 18 )
+						"opaque": true
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"cursor": new java.awt.Cursor( 2 )
+						"foreground": sfield java.awt.Color white
+						"caretColor": sfield java.awt.Color white
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:0:x}"
+						"$verticalGroup": "par l {space :0:1:x}"
+					} ) {
+						name: "pnLine1"
+						"preferredSize": &Dimension1 new java.awt.Dimension( 298, 1 )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblPassword"
+						"text": "Mật khẩu:"
+						"font": new java.awt.Font( "Segoe UI", 1, 16 )
+						"foreground": sfield java.awt.Color white
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "logoPassword"
+						"preferredSize": #Dimension0
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"opaque": true
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/icon/icon-hide.png" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "logoPasswordMouseClicked", true ) )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:0:x}"
+						"$verticalGroup": "par l {space :0:1:x}"
+					} ) {
+						name: "pnLine2"
+						"preferredSize": #Dimension1
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "cbxRemember"
+						"text": "Ghi nhớ đăng nhập"
+						"font": new java.awt.Font( "Segoe UI", 1, 12 )
+						"foreground": sfield java.awt.Color white
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"focusable": false
+						"focusPainted": false
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "btnLogin"
+						"text": "XÁC NHẬN"
+						"font": new java.awt.Font( "Segoe UI", 1, 18 )
+						"border": new javax.swing.border.LineBorder( sfield java.awt.Color white, 5, false )
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"foreground": sfield java.awt.Color white
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "txtPassword"
+						"foreground": sfield java.awt.Color white
+						"background": new java.awt.Color( 255, 153, 102, 255 )
+						"font": new java.awt.Font( "Segoe UI", 0, 18 )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"caretColor": sfield java.awt.Color white
+					} )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 700, 500 )
+		} )
+	}
+}

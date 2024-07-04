@@ -1,0 +1,117 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space ::25:x, comp logo:::p::p, space ::25:x}, comp pnNavigation::l:::x}"
+			"$verticalGroup": "par l {seq l {space :p:25:p, comp logo:::p::p, space :p:25:p, comp pnNavigation:::::x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "logo"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/logo.png" )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {comp option1::l::250:x, comp option2::l::250:x, comp option3::l::250:x, comp option4::l::250:x, comp option5::l::250:x, comp option6::l::250:x, comp option7::l::250:x, comp option8::l::250:x, comp option9::l::250:x}"
+				"$verticalGroup": "par l {seq l {comp option1:::p:45:p, space :0:0:p, comp option2:::p:45:p, space :0:0:p, comp option3:::p:45:p, space :0:0:p, comp option4:::p:45:p, space :0:0:p, comp option5:::p:45:p, space :0:0:p, comp option6:::p:45:p, space :0:0:p, comp option7:::p:45:p, space :0:0:p, comp option8:::p:45:p, space :0:0:p, comp option9:::p:45:p, space :0:58:x}}"
+			} ) {
+				name: "pnNavigation"
+				"background": new java.awt.Color( 255, 153, 102, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option1"
+					"text": "Option 1"
+					"horizontalAlignment": 0
+					"font": &Font0 new java.awt.Font( "Segoe UI", 1, 18 )
+					"foreground": sfield java.awt.Color white
+					"background": &Color0 new java.awt.Color( 255, 153, 102, 255 )
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option2"
+					"text": "Option 2"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option3"
+					"text": "Option 3"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option4"
+					"text": "Option 4"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option5"
+					"text": "Option 5"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option6"
+					"text": "Option 6"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option7"
+					"text": "Option 7"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option8"
+					"text": "Option 8"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "option9"
+					"text": "Option 9"
+					"horizontalAlignment": 0
+					"font": #Font0
+					"foreground": sfield java.awt.Color white
+					"background": #Color0
+					"opaque": true
+					"visible": false
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 250, 650 )
+		} )
+	}
+}
