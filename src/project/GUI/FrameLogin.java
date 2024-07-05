@@ -4,6 +4,9 @@
 
 package project.GUI;
 
+import project.BUS.TaiKhoanBUS;
+import project.DTO.TaiKhoanDTO;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -28,6 +31,10 @@ public class FrameLogin extends JFrame {
             logoPassword.setIcon(new ImageIcon(getClass().getResource("/img/icon/icon-hide.png")));
             showPass = true;
         }
+    }
+
+    private void btnLoginMouseClicked(MouseEvent e) {
+        DangNhap();
     }
 
     private void initComponents() {
@@ -59,14 +66,6 @@ public class FrameLogin extends JFrame {
 
         //======== pnLeft ========
         {
-            pnLeft.setBackground(Color.white);
-            pnLeft.setMaximumSize(new Dimension(400, 65769));
-            pnLeft.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
-            0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
-            . BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
-            red) ,pnLeft. getBorder( )) ); pnLeft. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
-            beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
-
             //======== pnIntroduction ========
             {
                 pnIntroduction.setBackground(Color.white);
@@ -234,6 +233,12 @@ public class FrameLogin extends JFrame {
                 btnLogin.setBorder(new LineBorder(Color.white, 5));
                 btnLogin.setBackground(new Color(0xff9966));
                 btnLogin.setForeground(Color.white);
+                btnLogin.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        btnLoginMouseClicked(e);
+                    }
+                });
 
                 //---- txtPassword ----
                 txtPassword.setForeground(Color.white);
@@ -355,4 +360,14 @@ public class FrameLogin extends JFrame {
     private JButton btnLogin;
     private JPasswordField txtPassword;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+
+    private void DangNhap() {
+        TaiKhoanBUS dangnhap = new TaiKhoanBUS();
+        TaiKhoanDTO result = dangnhap.DangNhap(txtUsername.getText(), txtPassword.getText());
+        if (result != null) {
+            this.dispose();
+            FrameMain main = new FrameMain();
+            main.setVisible(true);
+        }
+    }
 }

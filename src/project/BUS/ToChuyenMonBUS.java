@@ -1,2 +1,4 @@
-package project.BUS;public class ToChuyenMonBUS {
+package project.BUS;
+
+public class ToChuyenMonBUS {
 }

@@ -13,8 +13,8 @@ new FormModel {
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/logo.png" )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {comp option1::l::250:x, comp option2::l::250:x, comp option3::l::250:x, comp option4::l::250:x, comp option5::l::250:x, comp option6::l::250:x, comp option7::l::250:x, comp option8::l::250:x, comp option9::l::250:x}"
-				"$verticalGroup": "par l {seq l {comp option1:::p:45:p, space :0:0:p, comp option2:::p:45:p, space :0:0:p, comp option3:::p:45:p, space :0:0:p, comp option4:::p:45:p, space :0:0:p, comp option5:::p:45:p, space :0:0:p, comp option6:::p:45:p, space :0:0:p, comp option7:::p:45:p, space :0:0:p, comp option8:::p:45:p, space :0:0:p, comp option9:::p:45:p, space :0:58:x}}"
+				"$horizontalGroup": "par l {comp option1::l::0:x, comp option2::l::0:x, comp option3::l::0:x, comp option4::l::0:x, comp option5::l::0:x, comp option6::l::0:x, comp option7::l::0:x, comp option8::l::0:x, comp option9::l::0:x}"
+				"$verticalGroup": "par l {seq l {comp option1:::p:45:p, space :0:0:p, comp option2:::p:45:p, space :0:0:p, comp option3:::p:45:p, space :0:0:p, comp option4:::p:45:p, space :0:0:p, comp option5:::p:45:p, space :0:0:p, comp option6:::p:45:p, space :0:0:p, comp option7:::p:45:p, space :0:0:p, comp option8:::p:45:p, space :0:0:p, comp option9:::p:45:p, space :0:463:x}}"
 			} ) {
 				name: "pnNavigation"
 				"background": new java.awt.Color( 255, 153, 102, 255 )

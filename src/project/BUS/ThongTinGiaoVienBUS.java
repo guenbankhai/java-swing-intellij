@@ -1,2 +1,4 @@
-package project.BUS;public class ThongTinGiaoVienDTO {
+package project.BUS;
+
+public class ThongTinGiaoVienBUS {
 }

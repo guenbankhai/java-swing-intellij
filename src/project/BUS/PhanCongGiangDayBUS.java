@@ -1,2 +1,4 @@
-package project.BUS;public class PhanCongGiangDayDTO {
+package project.BUS;
+
+public class PhanCongGiangDayBUS {
 }

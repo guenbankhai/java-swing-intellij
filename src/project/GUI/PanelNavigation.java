@@ -1,15 +1,19 @@
 package project.GUI;
 
+import project.BUS.DiemMonHocBUS;
+import project.BUS.TaiKhoanBUS;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
 public class PanelNavigation extends JPanel {
+    private String role = TaiKhoanBUS.taiKhoan.getVaiTro();
+
     public PanelNavigation() {
         initComponents();
 
-        String role = "Admin";
         checkRoleUser(role);
     }
 
@@ -21,6 +25,32 @@ public class PanelNavigation extends JPanel {
         option.setBackground(new Color(0xff9966));
     }
 
+    private void optionMouseClicked(MouseEvent e, int option) {
+        if(role.equals("Admin")) {
+            switch (option) {
+                case 1:
+                    FrameMain mainFrame = (FrameMain) javax.swing.SwingUtilities.getWindowAncestor(this);
+                    mainFrame.showTableDiemMonHoc();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+            }
+        }
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -47,6 +77,9 @@ public class PanelNavigation extends JPanel {
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option1);
             }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 1);
+            }
         });
         option2.addMouseListener(new MouseAdapter() {
             @Override
@@ -56,6 +89,9 @@ public class PanelNavigation extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option2);
+            }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 2);
             }
         });
         option3.addMouseListener(new MouseAdapter() {
@@ -67,6 +103,9 @@ public class PanelNavigation extends JPanel {
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option3);
             }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 3);
+            }
         });
         option4.addMouseListener(new MouseAdapter() {
             @Override
@@ -76,6 +115,9 @@ public class PanelNavigation extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option4);
+            }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 4);
             }
         });
         option5.addMouseListener(new MouseAdapter() {
@@ -87,6 +129,9 @@ public class PanelNavigation extends JPanel {
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option5);
             }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 5);
+            }
         });
         option6.addMouseListener(new MouseAdapter() {
             @Override
@@ -96,6 +141,9 @@ public class PanelNavigation extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option6);
+            }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 6);
             }
         });
         option7.addMouseListener(new MouseAdapter() {
@@ -107,6 +155,9 @@ public class PanelNavigation extends JPanel {
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option7);
             }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 7);
+            }
         });
         option8.addMouseListener(new MouseAdapter() {
             @Override
@@ -117,6 +168,9 @@ public class PanelNavigation extends JPanel {
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option8);
             }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 8);
+            }
         });
         option9.addMouseListener(new MouseAdapter() {
             @Override
@@ -126,6 +180,9 @@ public class PanelNavigation extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 optionMouseExited(e, option9);
+            }
+            public void mouseClicked(MouseEvent e) {
+                optionMouseClicked(e, 9);
             }
         });
 
@@ -221,15 +278,15 @@ public class PanelNavigation extends JPanel {
             pnNavigation.setLayout(pnNavigationLayout);
             pnNavigationLayout.setHorizontalGroup(
                 pnNavigationLayout.createParallelGroup()
-                    .addComponent(option1, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option2, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option3, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option4, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option5, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option6, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option7, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option8, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(option9, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(option1, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option2, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option3, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option4, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option5, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option6, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option7, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option8, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(option9, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
             );
             pnNavigationLayout.setVerticalGroup(
                 pnNavigationLayout.createParallelGroup()
@@ -251,7 +308,7 @@ public class PanelNavigation extends JPanel {
                         .addComponent(option8, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(option9, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 58, Short.MAX_VALUE))
+                        .addGap(0, 463, Short.MAX_VALUE))
             );
         }
 

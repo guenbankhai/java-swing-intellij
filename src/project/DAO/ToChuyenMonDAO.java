@@ -1,2 +1,4 @@
-package project.DAO;public class ToChuyenMonDAO {
+package project.DAO;
+
+public class ToChuyenMonDAO {
 }

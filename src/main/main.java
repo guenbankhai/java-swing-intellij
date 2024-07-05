@@ -11,7 +11,6 @@ public class main {
         new Connect();
 
         FrameLogin login = new FrameLogin();
-        FrameMain main = new FrameMain();
-        main.setVisible(true);
+        login.setVisible(true);
     }
 }

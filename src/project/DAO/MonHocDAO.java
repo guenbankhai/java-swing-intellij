@@ -1,2 +1,4 @@
-package project.DAO;public class MonHocDAO {
+package project.DAO;
+
+public class MonHocDAO {
 }

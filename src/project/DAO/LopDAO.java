@@ -1,2 +1,4 @@
-package project.DAO;public class LopDAO {
+package project.DAO;
+
+public class LopDAO {
 }

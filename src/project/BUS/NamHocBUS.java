@@ -1,2 +1,4 @@
-package project.BUS;public class NamHocDTO {
+package project.BUS;
+
+public class NamHocBUS {
 }

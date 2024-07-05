@@ -138,6 +138,7 @@ new FormModel {
 						"border": new javax.swing.border.LineBorder( sfield java.awt.Color white, 5, false )
 						"background": new java.awt.Color( 255, 153, 102, 255 )
 						"foreground": sfield java.awt.Color white
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnLoginMouseClicked", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JPasswordField" ) {
 						name: "txtPassword"

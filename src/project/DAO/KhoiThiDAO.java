@@ -1,2 +1,4 @@
-package project.DAO;public class KhoiThiDAO {
+package project.DAO;
+
+public class KhoiThiDAO {
 }

@@ -4,9 +4,12 @@ import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
 import javaswingdev.drawer.DrawerItem;
 import javaswingdev.drawer.EventDrawer;
+import project.BUS.DiemMonHocBUS;
+import project.DTO.DiemMonHocDTO;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
@@ -27,6 +30,8 @@ public class FrameMain extends JFrame {
     private String[] columnNames;
     private int rowsPerPage = 100;
     private int currentPage = 1;
+
+    private DiemMonHocBUS control = new DiemMonHocBUS();
 
     public FrameMain() {
         initComponents();
@@ -193,5 +198,28 @@ public class FrameMain extends JFrame {
 
     public void setTableType(String tableType) {
         this.tableType = tableType;
+    }
+
+
+    //Show tabel
+    public void showTableDiemMonHoc() {
+        this.setTableType(FrameMain.DIEMMONHOC_TABLE);
+        List<DiemMonHocDTO> list = control.getAllDiemMonHoc();
+        String[] columnNames = {"Mã học sinh", "Mã môn học", "Năm học", "Học kỳ", "Điểm HS1", "Điểm HS2", "Điểm HS3", "Điểm TB"};
+        Object[][] data = new Object[list.size()][8];
+
+        for (int i = 0; i < list.size(); i++) {
+            DiemMonHocDTO var = list.get(i);
+            data[i][0] = var.getMaHS();
+            data[i][1] = var.getMaMH();
+            data[i][2] = var.getNamHoc();
+            data[i][3] = var.getHocKy();
+            data[i][4] = var.getDiemHS1();
+            data[i][5] = var.getDiemHS2();
+            data[i][6] = var.getDiemHS3();
+            data[i][7] = var.getDiemTB();
+        }
+
+        this.setTableData(columnNames, data);
     }
 }

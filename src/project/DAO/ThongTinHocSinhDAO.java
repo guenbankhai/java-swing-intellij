@@ -1,2 +1,4 @@
-package project.DAO;public class ThongTinHocSinhDAO {
+package project.DAO;
+
+public class ThongTinHocSinhDAO {
 }

@@ -1,2 +1,4 @@
-package project.BUS;public class LopDTO {
+package project.BUS;
+
+public class LopBUS {
 }

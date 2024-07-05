@@ -1,2 +1,4 @@
-package project.BUS;public class KhoiThiDTO {
+package project.BUS;
+
+public class KhoiThiBUS {
 }

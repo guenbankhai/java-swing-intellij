@@ -1,2 +1,4 @@
-package project.BUS;public class MonHocDTO {
+package project.BUS;
+
+public class MonHocBUS {
 }
