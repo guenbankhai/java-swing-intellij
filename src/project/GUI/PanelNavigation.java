@@ -1,7 +1,7 @@
 package project.GUI;
 
-import project.BUS.DiemMonHocBUS;
-import project.BUS.TaiKhoanBUS;
+import project.BUS.*;
+import project.DTO.TaiKhoanDTO;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,11 +9,22 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 
 public class PanelNavigation extends JPanel {
-    private String role = TaiKhoanBUS.taiKhoan.getVaiTro();
+    private TaiKhoanDTO taiKhoan = TaiKhoanBUS.taiKhoan;
+    private String role = taiKhoan.getVaiTro();
+    private String tenDN = taiKhoan.getTenDangNhap();
+
+    private DiemMonHocBUS diemMonHoc = new DiemMonHocBUS();
+    private KhoiThiBUS khoiThi = new KhoiThiBUS();
+    private LopBUS lop = new LopBUS();
+    private MonHocBUS monHoc = new MonHocBUS();
+    private NamHocBUS namHoc = new NamHocBUS();
+    private PhanCongGiangDayBUS phanCongGiangDay = new PhanCongGiangDayBUS();
+    private ThongTinGiaoVienBUS thongTinGiaoVien = new ThongTinGiaoVienBUS();
+    private ThongTinHocSinhBUS thongTinHocSinh = new ThongTinHocSinhBUS();
+    private ToChuyenMonBUS  toChuyenMon = new ToChuyenMonBUS();
 
     public PanelNavigation() {
         initComponents();
-
         checkRoleUser(role);
     }
 
@@ -25,31 +36,58 @@ public class PanelNavigation extends JPanel {
         option.setBackground(new Color(0xff9966));
     }
 
-    private void optionMouseClicked(MouseEvent e, int option) {
+    public void optionMouseClicked(MouseEvent e, int option) {
+        FrameMain mainFrame = (FrameMain) javax.swing.SwingUtilities.getWindowAncestor(this);
         if(role.equals("Admin")) {
             switch (option) {
                 case 1:
-                    FrameMain mainFrame = (FrameMain) javax.swing.SwingUtilities.getWindowAncestor(this);
-                    mainFrame.showTableDiemMonHoc();
+                    mainFrame.showTableData(FrameMain.DIEMMONHOC_TABLE, diemMonHoc.getAllData());
                     break;
                 case 2:
+                    mainFrame.showTableData(FrameMain.HOCSINH_TABLE, thongTinHocSinh.getAllData());
                     break;
                 case 3:
+                    mainFrame.showTableData(FrameMain.GIAOVIEN_TABLE, thongTinGiaoVien.getAllData());
                     break;
                 case 4:
+                    mainFrame.showTableData(FrameMain.TOCHUYENMON_TABLE, toChuyenMon.getAllData());
                     break;
                 case 5:
+                    mainFrame.showTableData(FrameMain.PHANCONG_TABLE, phanCongGiangDay.getAllData());
                     break;
                 case 6:
+                    mainFrame.showTableData(FrameMain.NAMHOC_TABLE, namHoc.getAllData());
                     break;
                 case 7:
+                    mainFrame.showTableData(FrameMain.MONHOC_TABLE, monHoc.getAllData());
                     break;
                 case 8:
+                    mainFrame.showTableData(FrameMain.KHOITHI_TABLE, khoiThi.getAllData());
                     break;
                 case 9:
+                    mainFrame.showTableData(FrameMain.LOP_TABLE, lop.getAllData());
+                    break;
+            }
+        } else if (role.equals("HocSinh")) {
+            switch (option) {
+                case 1:
+                    mainFrame.showTableData(FrameMain.BANGDIEM_HOCSINH, diemMonHoc.getHocSinhData(tenDN));
+                    break;
+                case 2:
+                    mainFrame.showTableData(FrameMain.THONGTIN_HOCSINH, thongTinHocSinh.getData(tenDN));
+                    break;
+            }
+        } else {
+            switch (option) {
+                case 1:
+                    mainFrame.showTableData(FrameMain.BANGDIEM_GIAOVIEN, diemMonHoc.getGiaoVienData(tenDN));
+                    break;
+                case 2:
+                    mainFrame.showTableData(FrameMain.THONGTIN_GIAOVIEN, thongTinGiaoVien.getData(tenDN));
                     break;
             }
         }
+
     }
 
     private void initComponents() {
@@ -361,23 +399,23 @@ public class PanelNavigation extends JPanel {
             option5.setVisible(true);
             option5.setText("Phân công giảng dạy");
             option6.setVisible(true);
-            option6.setText("Quản lý lớp học");
+            option6.setText("Quản lý năm học");
             option7.setVisible(true);
-            option7.setText("Quản lý năm học");
+            option7.setText("Quản lý môn học");
             option8.setVisible(true);
             option8.setText("Quản lý khối thi");
             option9.setVisible(true);
-            option9.setText("Quản lý môn học");
+            option9.setText("Quản lý lớp học");
         } else if (role.equals("HocSinh")) {
             option1.setVisible(true);
-            option1.setText("Thông tin cá nhân");
+            option1.setText("Bảng điểm cá nhân");
             option2.setVisible(true);
-            option2.setText("Bảng điểm cá nhân");
+            option2.setText("Thông tin cá nhân");
         } else {
             option1.setVisible(true);
-            option1.setText("Thông tin cá nhân");
+            option1.setText("Quản lý điểm");
             option2.setVisible(true);
-            option2.setText("Quản lý điểm");
+            option2.setText("Thông tin cá nhân");
         }
 
     }

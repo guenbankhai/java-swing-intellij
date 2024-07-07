@@ -1,0 +1,48 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:20:p, comp scrollPane:::p:360:p}, seq l {space :p:104:p, comp btnAccept:::p::p, space :p:33:p, comp btnCancel:::p::p}}, space :p:18:p}}"
+			"$verticalGroup": "par l {seq l {space :p:20:p, comp scrollPane:::p:478:p, space s:::p, par b {comp btnAccept::b:p::p, comp btnCancel::b:p::p}, space :::p}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane"
+				"background": sfield java.awt.Color white
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"focusable": false
+				"opaque": false
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table"
+					"focusable": false
+					"background": sfield java.awt.Color lightGray
+					"showHorizontalLines": true
+					"showVerticalLines": true
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnAccept"
+				"text": "Xác nhận"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				"background": sfield java.awt.Color gray
+				"borderPainted": false
+				"focusable": false
+				"focusPainted": false
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnCancel"
+				"text": "Huỷ"
+				"background": sfield java.awt.Color gray
+				"borderPainted": false
+				"focusable": false
+				"focusPainted": false
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 600 )
+		} )
+	}
+}

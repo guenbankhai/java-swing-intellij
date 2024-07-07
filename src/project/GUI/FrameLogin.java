@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Thu Jun 20 15:27:16 ICT 2024
- */
-
 package project.GUI;
 
 import project.BUS.TaiKhoanBUS;
@@ -9,6 +5,11 @@ import project.DTO.TaiKhoanDTO;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -18,6 +19,7 @@ public class FrameLogin extends JFrame {
 
     public FrameLogin() {
         initComponents();
+        loadLastLogin();
     }
 
     private void logoPasswordMouseClicked(MouseEvent e) {
@@ -34,7 +36,7 @@ public class FrameLogin extends JFrame {
     }
 
     private void btnLoginMouseClicked(MouseEvent e) {
-        DangNhap();
+        Login();
     }
 
     private void initComponents() {
@@ -233,6 +235,8 @@ public class FrameLogin extends JFrame {
                 btnLogin.setBorder(new LineBorder(Color.white, 5));
                 btnLogin.setBackground(new Color(0xff9966));
                 btnLogin.setForeground(Color.white);
+                btnLogin.setFocusPainted(false);
+                btnLogin.setFocusable(false);
                 btnLogin.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -361,13 +365,41 @@ public class FrameLogin extends JFrame {
     private JPasswordField txtPassword;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 
-    private void DangNhap() {
+    private void Login() {
         TaiKhoanBUS dangnhap = new TaiKhoanBUS();
         TaiKhoanDTO result = dangnhap.DangNhap(txtUsername.getText(), txtPassword.getText());
         if (result != null) {
+            saveLogin();
             this.dispose();
             FrameMain main = new FrameMain();
             main.setVisible(true);
+        }
+    }
+
+    private void saveLogin() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("login.txt"))) {
+            if (cbxRemember.isSelected()) {
+                writer.write(txtUsername.getText() + "\n");
+                writer.write(new String(txtPassword.getPassword()));
+            } else {
+                writer.write("");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadLastLogin() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("login.txt"))) {
+            String username = reader.readLine();
+            String password = reader.readLine();
+            if (username != null && password != null) {
+                txtUsername.setText(username);
+                txtPassword.setText(password);
+                cbxRemember.setSelected(true);
+            }
+        } catch (IOException e) {
+            cbxRemember.setSelected(false);
         }
     }
 }

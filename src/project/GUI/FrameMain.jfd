@@ -4,18 +4,21 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :::p, comp btnNavigation:::p:51:p, space ::991:x}, seq t {par t {seq {space ::827:x, comp cbxPageNumber:::p::p, space s:::p, comp btnPageNumber:::p::p}, seq {space :p:50:p, comp scrollPaneMain::::948:x}}, space :p:50:p}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp btnNavigation:::p::p, space :p:75:p, comp scrollPaneMain::::440:x, space s:::p, par b {comp btnPageNumber::b:p::p, comp cbxPageNumber::b:p::p}, space :p:37:p}}"
+			"$horizontalGroup": "par l {seq l {space :::p, comp btnNavigation:::p:51:p, space ::991:x}, seq t {space :p:50:p, par t {seq {comp btnAdd:::p::p, space u:::p, comp btnEdit:::p::p, space u:::p, comp btnDelete:::p::p, space ::537:x, comp cbxPageNumber:::p::p, space s:::p, comp btnPageNumber:::p::p}, comp scrollPaneMain::::948:x}, space :p:50:p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp btnNavigation:::p::p, space :p:75:p, comp scrollPaneMain::::440:x, space s:::p, par b {comp btnPageNumber::b:p::p, comp cbxPageNumber::b:p::p, comp btnAdd::b:p::p, comp btnEdit::b:p::p, comp btnDelete::b:p::p}, space :p:37:p}}"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 3
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPaneMain"
+				"opaque": false
+				"focusable": false
 				add( new FormComponent( "javax.swing.JTable" ) {
 					name: "table"
 					"background": sfield java.awt.Color lightGray
 					"showHorizontalLines": true
 					"showVerticalLines": true
+					"focusable": false
 				} )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -32,10 +35,47 @@ new FormModel {
 				name: "btnPageNumber"
 				"text": "Xác nhận"
 				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				"focusPainted": false
+				"background": sfield java.awt.Color gray
+				"focusable": false
+				"borderPainted": false
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnPageNumberMouseClicked", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "cbxPageNumber"
+				"background": sfield java.awt.Color gray
+				"focusable": false
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnAdd"
+				"text": "Thêm"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				"focusPainted": false
+				"focusable": false
+				"background": sfield java.awt.Color gray
+				"borderPainted": false
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnAddMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnEdit"
+				"text": "Sửa"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				"focusPainted": false
+				"background": sfield java.awt.Color gray
+				"focusable": false
+				"borderPainted": false
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnEditMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnDelete"
+				"text": "Xoá"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				"focusPainted": false
+				"background": sfield java.awt.Color gray
+				"focusable": false
+				"borderPainted": false
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btnDeleteMouseClicked", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

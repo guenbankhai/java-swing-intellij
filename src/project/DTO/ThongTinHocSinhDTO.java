@@ -5,13 +5,14 @@ import java.util.Date;
 public class ThongTinHocSinhDTO {
     private String maHS;
     private String hoTen;
+    private String gioiTinh;
     private Date ngaySinh;
     private String noiSinh;
     private String soDienThoai;
     private int namNhapHoc;
     private String maLop;
 
-    public ThongTinHocSinhDTO(String maHS, String hoTen, Date ngaySinh, String noiSinh, String soDienThoai, int namNhapHoc, String maLop) {
+    public ThongTinHocSinhDTO(String maHS, String hoTen, String gioiTinh, Date ngaySinh, String noiSinh, String soDienThoai, int namNhapHoc, String maLop) {
         this.maHS = maHS;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -35,6 +36,14 @@ public class ThongTinHocSinhDTO {
 
     public void setHoTen(String hoTen) {
         this.hoTen = hoTen;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
 
     public Date getNgaySinh() {

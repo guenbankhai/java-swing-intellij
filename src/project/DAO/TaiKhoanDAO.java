@@ -8,12 +8,12 @@ import java.sql.SQLException;
 
 public class TaiKhoanDAO {
     public TaiKhoanDTO DangNhap(TaiKhoanDTO taikhoan) {
+        String query = "SELECT * FROM TaiKhoan WHERE tenDN =? AND matKhau=?";
         try {
-            String query = "SELECT * FROM TaiKhoan WHERE tenDN =? AND matKhau=?";
-            PreparedStatement pre = Connect.conn.prepareStatement(query);
-            pre.setString(1, taikhoan.getTenDangNhap());
-            pre.setString(2, taikhoan.getMatKhau());
-            ResultSet rs = pre.executeQuery();
+            PreparedStatement ps = Connect.conn.prepareStatement(query);
+            ps.setString(1, taikhoan.getTenDangNhap());
+            ps.setString(2, taikhoan.getMatKhau());
+            ResultSet rs = ps.executeQuery();
             TaiKhoanDTO result = null;
             if(rs.next()) {
                 result = taikhoan;
